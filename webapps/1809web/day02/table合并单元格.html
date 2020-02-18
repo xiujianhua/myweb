@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+td colspan="2" 跨2列  被占的向右移
+td rowspan="2"  跨两行 被占的向右移
+-->
+<table border="5"
+       cellpadding="10"
+       cellspacing="5"
+       align="center"
+       width="70%">
+    <tr>
+        <td colspan="2">11</td>
+        <td>13</td>
+        <td>14</td>
+    </tr><tr>
+        <td>21</td>
+        <td>22</td>
+        <td rowspan="2">23</td>
+        <td>24</td>
+    </tr><tr>
+        <td>31</td>
+        <td>32</td>
+        <td>34</td>
+    </tr>
+</table>
+
+<!-- 练习 -->
+<table border="5"
+       cellpadding="10"
+       cellspacing="5"
+       align="center"
+       width="70%">
+    <tr>
+        <td colspan="2">11</td>
+        <td rowspan="2">13</td>
+        <td>14</td>
+    </tr><tr>
+        <td colspan="2">21</td>
+        <td rowspan="2">24</td>
+    </tr><tr>
+        <td colspan="3">31</td>
+    </tr>
+</table>
+<!-- 练习 -->
+<table border="5"
+       cellpadding="10"
+       cellspacing="5"
+       align="center"
+       width="70%">
+    <tr>
+        <td colspan="2">11</td>
+        <td rowspan="2">13</td>
+    </tr><tr>
+        <td ROWSPAN="2">21</td>
+        <td>22</td>
+    </tr><tr>
+        <td colspan="2">32</td>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+action 提交地址
+method 请求方式get/post
+get:将请求参数放在请求地址后面
+post:将请求参数放在请求体里面
+控件需写在form标签内
+-->
+<form action="http://www.baidu.com" method="get">
+
+    <!--
+    placeholder 占位文本
+    name:作为传递参数的key，必须写
+    value:默认值
+    maxlength:设置最大长度
+    readonly="readonly"只读
+    -->
+    文本框：<input type="text"
+               name="username"
+               placeholder="请输入用户名"
+               value="abc"
+               maxlength="5"
+               readonly="readonly"
+                ><br> <br>
+
+
+
+    密码框：<input type="password"
+               name="password"
+               placeholder="请输入密码"
+                ><br> <br>
+
+
+
+    <!--
+    单选按钮需相同name
+    value值将被发送
+    lable for 单选id 可扩大选择范围，点字亦可以选中
+    checked 默认选中
+    -->
+    单选控件：
+    <input type="radio" value="male"
+           checked="checked"
+           name="gender" id="nan">
+    <label for="nan">男</label>
+    <input type="radio" value="female" name="gender" id="nv">
+    <label for="nv">女</label><br> <br>
+
+
+
+
+    <!--
+    需相同name
+    需重写value,作为值传递
+    checked 默认选中
+    -->
+    多选控件：
+    <input value="lq" checked="checked"
+           name="hobby" type="checkbox">打篮球
+    <input value="code" name="hobby" type="checkbox">打王者
+    <input value="wz" name="hobby" type="checkbox">打豆豆
+    <br> <br>
+
+
+    时间选择器：
+    <input type="date" name="birthday"><br><br>
+
+
+    文件选择器：
+    <input type="file" name="pic"><br><br>
+
+    <!--
+    可重写value,作为值传递
+    selected="selected" 默认选中
+    -->
+    下拉选择器：
+    <select name="city">
+        <option>请选择</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option  selected="selected">深圳</option>
+    </select><br><br>
+
+
+    文本域：<br>
+    <textarea rows="20" cols="20" name="info">
+        这家伙很懒什么都没有留下...
+    </textarea><br><br>
+
+     <!--
+    当需要给服务器传递某些不需要展示给用户的信息
+    -->
+    隐藏域：
+    <input type="hidden" name="yyy" value="bbb" ><br><br>
+
+    提交按钮：<input type="submit" value="注册"><br><br>
+
+    重置按钮：<input type="reset"  value="重写"><br><br>
+
+    <!--
+    无默认功能，需自定义
+    -->
+    自定义按钮<input type="button" value="自定义按钮">
+
+</form>
+
+</body>
+</html>

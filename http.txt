@@ -1,0 +1,57 @@
+
+
+HTTP协议---超文本传输协议
+是浏览器用户服务端之间进行通讯的应用层协议。
+它规定了浏览器与服务端(B/S)之间如何进行通讯
+以及通讯的数据格式
+
+HTTP协议要客户端(浏览器)与服务端之间发送的大部分内容
+为文本内容数据。并其该文本所采用的字符集为ISO08859-1
+这是一个欧洲编码，里面不支持中文。
+所以HTTP协议规定的内容部分是不能直接使用中文字符
+
+HTTP协议对他们之间通讯的数据也有所定义
+其中客户端发送给服务端的内容称为请求(Request)
+服务端发送给客户端的内容称为相应(Response)
+他们都有对应的格式定义要求
+
+请求Request
+请求是客户端发送给服务端的内容，它由三个部分组成：
+请求行，消息头，消息正文
+
+
+1：请求行
+例如：GET /index.html HTTP/1.1
+请求行是一行字符串（以CRLF结尾）,分为三部分，格式为：
+method url protocol(CRLF)
+请求的方式 请求路径 请求使用的HTTP协议版本(CRLF)
+注意：CR,LF表示ASC编码中定义的回车符与换行符，2进制对应的整数数值为13,10
+
+
+2：消息头
+消息头是客户端发送给服务端的写附加信息，有的用来说明浏览器信息，
+说明消息正文内容和长度，请求地址等等。
+消息头是由若干行组成的，每一行为一个消息头。
+格式如：
+name:value(CRLF)
+当所有的消息头发送完毕后，客户端会单独发送一个CRLF
+表示消息头部分结束
+例如：
+Host: localhost:8088(CRLF)
+Connection: keep-alive(CRLF)
+Upgrade-Insecure-Requests: 1(CRLF)
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36(CRLF)
+Sec-Fetch-User: ?1(CRLF)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9(CRLF)
+Sec-Fetch-Site: none(CRLF)
+Sec-Fetch-Mode: navigate(CRLF)
+Accept-Encoding: gzip, deflate, br(CRLF)
+Accept-Language: zh-CN,zh;q=0.9(CRLF)(CRLF)
+
+
+
+3消息正文
+消息正文是纯2进制数据，是用户提交给服务端的实际内容
+具体该内容共多少字节，并且是什么类型的数据，那么浏览器会在消息头中
+使用：Content-Type和Content-Length告知服务端
+不是所有请求都会含有消息正文
